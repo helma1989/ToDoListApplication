@@ -12,6 +12,7 @@ app.use(static(__dirname + '/public'));
 router.post('/', urlencodedParser, taskController.createNewTask);
 
 router.get('/', taskController.getTasks);
+router.put('/', taskController.updateTask);
 
 //router.get('/:id', taskController.getTask);
 

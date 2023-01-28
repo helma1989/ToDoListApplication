@@ -42,9 +42,17 @@ async function createNewTask (req,res) {
 
 async function getTasks(req, res){
     const tasks = await taskModel.find({});
-    //res.send(tasks)
-    res.render('index', {task: tasks});
+    res.send(tasks)
+    //res.render('index', {task: tasks});
     
+}
+
+async function updateTask(req,res){
+    await taskModel.updateOne({_id: req.body.id},{ $set: { completed: req.body.completed }});
+    res.json({
+        message: "Task updated!",
+        success: true
+    })
 }
 
 // function getTask(req, res){
@@ -83,7 +91,6 @@ async function deleteTask(req, res) {
             }
         } else {
             await taskModel.deleteOne( {_id: tasksToDelete[0]});
-   
         }
 
         res.json({
@@ -112,4 +119,4 @@ async function deleteAllTasks(req, res){
     };
 }
 
-module.exports = {createNewTask, getTasks, deleteTask, deleteAllTasks};
+module.exports = {createNewTask, getTasks, deleteTask, deleteAllTasks, updateTask};

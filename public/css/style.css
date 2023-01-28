@@ -4,7 +4,7 @@
 
 .container {
     margin: auto;
-    padding: 6% 0;
+    padding: 6% 0 1% 0;
     width: 60%;
     max-width: 400px;
     background-color: blanchedalmond;
@@ -113,5 +113,19 @@ input[type=checkbox]{
 #buttons button{
     height: 2rem;
     font-size: 1rem;
+}
+
+.logout{
+    display:block;
+    margin: 5rem auto 5px auto;
+    height: 2.5rem;
+    font-size: 1rem;
+    background-color: rgb(95, 9, 26);
+    color: white;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 8px;
 }
 
